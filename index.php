@@ -16,8 +16,9 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
-    require __DIR__.'/../storage/framework/maintenance.php';
+$system_dir = __Dir__ . "/system";
+if (file_exists($system_dir . '/storage/framework/maintenance.php')) { // ditambah $system_dir
+    require $system_dir . '/storage/framework/maintenance.php';
 }
 
 /*
@@ -31,7 +32,8 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+
+require $system_dir . '/vendor/autoload.php'; // ditambah $system_dir
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +46,14 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once $system_dir . '/bootstrap/app.php'; // ditambah $system_dir
+
+
+//melakukan binding
+$app->bind('path.public', function () {
+    return __DIR__ . "/public";
+});
+// akhir binding
 
 $kernel = $app->make(Kernel::class);
 
