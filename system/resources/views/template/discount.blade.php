@@ -32,7 +32,7 @@ Author URL: http://w3layouts.com
                         <div class="top-right-strip row">
                             <!--/left-->
                             <div class="top-hny-left-content col-lg-6 pl-lg-0">
-                                <h6>Upto 30% off on All styles </h6>
+                                <h6>Diskon dari 30% - 50% diberbagai koleksi</h6>
                             </div>
                             <!--//left-->
                             <!--/right-->
@@ -51,12 +51,12 @@ Author URL: http://w3layouts.com
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                                 <div class="wrap">
-                                    <h5 class="text-center mb-4">Login Now</h5>
+                                    <h5 class="text-center mb-4">Login </h5>
                                     <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
                                         <!--/login-form-->
                                         <form action="#" method="post">
                                             <div class="form-group">
-                                                <p class="login-texthny mb-2">Email address</p>
+                                                <p class="login-texthny mb-2">Email </p>
                                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
                                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email
                                                     with anyone else.</small>
@@ -82,6 +82,7 @@ Author URL: http://w3layouts.com
                                     <!---->
                                 </div>
                             </div>
+                            <!-- akhir right -->
                         </div>
                     </div>
                     <!--/nav-->
@@ -90,17 +91,15 @@ Author URL: http://w3layouts.com
                             <a class="navbar-brand" href="index.html">
                                 LEN<span class="lohny">S</span>tore</a>
                             <!-- if logo is image enable this   
-                    <a class="navbar-brand" href="#index.html">
-                      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                    </a> -->
+							<a class="navbar-brand" href="#index.html">
+								<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+							</a> -->
                             <!--/search-right-->
                             <div class="search-right">
 
                                 <a href="#search" title="search"><span class="fa fa-search mr-2" aria-hidden="true"></span>
-                                    <span class="search-text">Search here</span></a>
+                                    <span class="search-text">Cari disini</span></a>
                                 <!-- search popup -->
-
-
                                 <div id="search" class="pop-overlay">
                                     <div class="popup">
 
@@ -110,7 +109,6 @@ Author URL: http://w3layouts.com
                                         </form>
 
                                     </div>
-
                                     <a class="close" href="#">×</a>
                                 </div>
                                 <!-- /search popup -->
@@ -161,10 +159,10 @@ Author URL: http://w3layouts.com
                 <div class="align-photo-6-inf-cols row">
 
                     <div class="photo-6-inf-right col-lg-6">
-                        <h3 class="hny-title text-left">All Branded Men's Suits are Flat <span>30% Discount</span></h3>
-                        <p>Visit our shop to see amazing creations from our designers.</p>
+                        <h3 class="hny-title text-left">Jas Pria disemua brand <span>diskon 30% </span></h3>
+                        <p> Berlaku dalam satu minggu terhitung pada tanggal 24 oktober 2020</p>
                         <a href="#" class="read-more btn">
-                            Shop Now
+                            Belanja Sekarang
                         </a>
                     </div>
                     <div class="photo-6-inf-left col-lg-6">
@@ -197,11 +195,11 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="video-gd-left col-lg-4 p-lg-5 p-4">
                         <div class="p-xl-4 p-0 video-wrap">
-                            <h3 class="hny-title text-left">All Branded Women's Bags are Flat <span>30% Discount</span>
+                            <h3 class="hny-title text-left">Tas Wanita dari semua brand <span>diskon 30% </span>
                             </h3>
-                            <p>Visit our shop to see amazing creations from our designers.</p>
+                            <p> Berlaku dalam satu minggu terhitung pada tanggal 25 oktober 2020</p>
                             <a href="#" class="read-more btn">
-                                Shop Now
+                                Belanja Sekarang
                             </a>
                         </div>
                     </div>
@@ -222,10 +220,10 @@ Author URL: http://w3layouts.com
                         <img src="{{url('public')}}/assets/images/bg3.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="photo-6-inf-right col-lg-6">
-                        <h3 class="hny-title text-left">All Branded Girl's Suits are Flat <span>50% Discount</span></h3>
-                        <p>Visit our shop to see amazing creations from our designers.</p>
+                        <h3 class="hny-title text-left">tas dan sepatu wanita <span>diskon 50%</span></h3>
+                        <p> Berlaku dalam satu minggu terhitung pada tanggal 25 oktober 2020</p>
                         <a href="#" class="read-more btn">
-                            Shop Now
+                            Belanja Sekarang
                         </a>
                     </div>
                 </div>
@@ -241,10 +239,10 @@ Author URL: http://w3layouts.com
                         <img src="{{url('public')}}/assets/images2/b1.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="photo-6-inf-right col-lg-6">
-                        <h3 class="hny-title text-left">All T-Shirt Girl's Suits are Flat <span>40% Discount</span></h3>
-                        <p>Visit our shop to see amazing creations from our designers.</p>
+                        <h3 class="hny-title text-left"> T-Shirt Wanita<span> diskon 40%</span></h3>
+                        <p> Berlaku dalam satu minggu terhitung pada tanggal 25 oktober 2020</p>
                         <a href="#" class="read-more btn">
-                            Shop Now
+                            Belanja Sekarang
                         </a>
                     </div>
                 </div>
@@ -266,12 +264,7 @@ Author URL: http://w3layouts.com
                     <div class="left-side col-lg-4">
                         <h3><a class="logo-footer" href="index.html">
                                 len<span class="lohny">S</span>tore</a></h3>
-                        <!-- if logo is image enable this   
-                                    <a class="navbar-brand" href="#index.html">
-                                        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                                    </a> -->
-                        <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
-                            a ligula quam. Ut blandit eu leo non suscipit. </p>
+
                         <ul class="social-footerhny mt-lg-5 mt-4">
 
                             <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>

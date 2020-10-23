@@ -32,7 +32,7 @@ Author URL: http://w3layouts.com
                         <div class="top-right-strip row">
                             <!--/left-->
                             <div class="top-hny-left-content col-lg-6 pl-lg-0">
-                                <h6>Upto 30% off on All styles </h6>
+                                <h6>Diskon dari 30% - 50% diberbagai koleksi</h6>
                             </div>
                             <!--//left-->
                             <!--/right-->
@@ -51,12 +51,12 @@ Author URL: http://w3layouts.com
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                                 <div class="wrap">
-                                    <h5 class="text-center mb-4">Login Now</h5>
+                                    <h5 class="text-center mb-4">Login </h5>
                                     <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
                                         <!--/login-form-->
                                         <form action="#" method="post">
                                             <div class="form-group">
-                                                <p class="login-texthny mb-2">Email address</p>
+                                                <p class="login-texthny mb-2">Email </p>
                                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
                                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email
                                                     with anyone else.</small>
@@ -82,6 +82,7 @@ Author URL: http://w3layouts.com
                                     <!---->
                                 </div>
                             </div>
+                            <!-- akhir right -->
                         </div>
                     </div>
                     <!--/nav-->
@@ -90,17 +91,15 @@ Author URL: http://w3layouts.com
                             <a class="navbar-brand" href="index.html">
                                 LEN<span class="lohny">S</span>tore</a>
                             <!-- if logo is image enable this   
-                    <a class="navbar-brand" href="#index.html">
-                      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                    </a> -->
+							<a class="navbar-brand" href="#index.html">
+								<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+							</a> -->
                             <!--/search-right-->
                             <div class="search-right">
 
                                 <a href="#search" title="search"><span class="fa fa-search mr-2" aria-hidden="true"></span>
-                                    <span class="search-text">Search here</span></a>
+                                    <span class="search-text">Cari disini</span></a>
                                 <!-- search popup -->
-
-
                                 <div id="search" class="pop-overlay">
                                     <div class="popup">
 
@@ -110,7 +109,6 @@ Author URL: http://w3layouts.com
                                         </form>
 
                                     </div>
-
                                     <a class="close" href="#">×</a>
                                 </div>
                                 <!-- /search popup -->
@@ -121,11 +119,11 @@ Author URL: http://w3layouts.com
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item ">
+                                    <li class="nav-item  ">
                                         <a class="nav-link" href="{{ url('/template') }}">Home</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ url('/template.') }}">Product</a>
+                                        <a class="nav-link" href="{{ url('/template.product') }}">Product</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/template.discount') }}">Discount</a>
@@ -1134,7 +1132,7 @@ Author URL: http://w3layouts.com
         <div class="grids-hny-2-mian py-5">
             <div class="container py-lg-5">
 
-                <h3 class="hny-title mb-0 text-center"><span>PRODUCT</span> LAINNYA</h3>
+                <h3 class="hny-title mb-0 text-center"><span>PRODUCT</span> lainnya</h3>
                 <p class="mb-4 text-center">Handpicked Favourites just for you</p>
                 <div class="welcome-grids row mt-5">
                     <div class="col-lg-2 col-md-4 col-6 welcome-image">
@@ -1146,7 +1144,7 @@ Author URL: http://w3layouts.com
                                 </div>
                             </a>
                         </div>
-                        <h4><a href="#URL">Hand Bags</a></h4>
+                        <h4><a href="#URL">Tas</a></h4>
 
                     </div>
 
@@ -1160,7 +1158,7 @@ Author URL: http://w3layouts.com
                             </a>
                         </div>
                         <h4><a href="#URL">
-                                Watches</a></h4>
+                                Jam Tangan</a></h4>
 
 
                     </div>
@@ -1173,7 +1171,7 @@ Author URL: http://w3layouts.com
                                 </div>
                             </a>
                         </div>
-                        <h4><a href="#URL">Shoes</a></h4>
+                        <h4><a href="#URL">Sepatu</a></h4>
 
 
                     </div>
@@ -1186,7 +1184,7 @@ Author URL: http://w3layouts.com
                                 </div>
                             </a>
                         </div>
-                        <h4><a href="#URL">Suits</a></h4>
+                        <h4><a href="#URL">Jas</a></h4>
 
                     </div>
                     <div class="col-lg-2 col-md-4 col-6 welcome-image">
@@ -1199,7 +1197,7 @@ Author URL: http://w3layouts.com
                             </a>
                         </div>
                         <h4><a href="#URL">
-                                Accessories</a></h4>
+                                Aksesoris</a></h4>
 
 
                     </div>
@@ -1213,7 +1211,7 @@ Author URL: http://w3layouts.com
                             </a>
                         </div>
                         <h4><a href="#URL">
-                                Fragrances</a></h4>
+                                Parfum</a></h4>
 
 
                     </div>
@@ -1234,12 +1232,7 @@ Author URL: http://w3layouts.com
                     <div class="left-side col-lg-4">
                         <h3><a class="logo-footer" href="index.html">
                                 len<span class="lohny">S</span>tore</a></h3>
-                        <!-- if logo is image enable this   
-                                    <a class="navbar-brand" href="#index.html">
-                                        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                                    </a> -->
-                        <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
-                            a ligula quam. Ut blandit eu leo non suscipit. </p>
+
                         <ul class="social-footerhny mt-lg-5 mt-4">
 
                             <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
