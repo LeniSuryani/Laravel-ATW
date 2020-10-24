@@ -17,23 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/t_informatika', function () {
-    return view("t_informatika");
-});
-
-Route::get('/t_sipil', function () {
-    return view("t_sipil");
-});
-
-Route::get('/t_elektro', function () {
-    return view("t_elektro");
-});
 
 Route::get('/t_pertambangan', function () {
     return view("t_pertambangan");
 });
 
-//////////////////////////////////////////////
+////////////////// pengguna ////////////////////////////
 
 Route::get('/template', function () {
     return view('template.base');
@@ -49,4 +38,25 @@ Route::get('/template.discount', function () {
 
 Route::get('/template.detail', function () {
     return view('template.detail');
+});
+
+//////////Admin
+Route::get('/template.admin', function () { ////sebagai halaman utama
+    return view('template.admin.beranda');
+});
+
+Route::get('/template.admin.kategori', function () {
+    return view('template.admin.kategori');
+});
+
+Route::get('/template.admin.promo', function () {
+    return view('template.admin.promo');
+});
+
+Route::get('/template.admin.master', function () {
+    return view('template.admin.master');
+});
+
+Route::get('/template.admin.produk', function () {
+    return view('template.admin.produk');
 });
