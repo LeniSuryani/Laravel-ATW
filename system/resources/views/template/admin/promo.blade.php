@@ -1,31 +1,9 @@
-@include('template.section-admin.head')
+@extends('template.section-admin.template')
 
-<body>
-    <section id="container">
-        <!--header start-->
-        @include('template.section-admin.header')
-        <!--header end-->
-        <!--sidebar start-->
-        @include('template.section-admin.sidebar')
-        <!--sidebar end-->
+@section('content')
+<!-- calender -->
+<div class="agil-info-calendar ">
 
-        <!--main content start-->
-        <section id="main-content">
-            <section class="wrapper">
-                <!-- calender -->
-                <div class="agil-info-calendar ">
-
-                    <div class="clearfix"> </div>
-                </div>
-            </section>
-            <!-- footer -->
-            @include('template.section-admin.footer')
-            <!-- / footer -->
-        </section>
-        <!--main content end-->
-    </section>
-    <!-- foot -->
-    @include('template.section-admin.foot')
-</body>
-
-</html>
+    <div class="clearfix"> </div>
+</div>
+@endsection

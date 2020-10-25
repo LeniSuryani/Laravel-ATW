@@ -12,7 +12,9 @@
     <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
         <ul class="nav top-menu">
-            <h3 style="color:floralwhite;  text-indent: 40px;  letter-spacing: 8px; font-weight:300; margin-top:4px;">BERANDA</h3>
+            <h3 style="color:floralwhite;  text-indent: 40px;  letter-spacing: 8px; word-spacing: 8px; font-weight:300; margin-top:4px;">
+                SELAMAT DATANG ADMIN
+            </h3>
         </ul>
         <!--  notification end -->
     </div>
@@ -25,9 +27,9 @@
             <!-- user login dropdown start-->
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <img alt="" src="{{url('public')}}/assets_admin/images/2.png">
+                    <img alt="" src="{{url('public')}}/assets/images/bunga.jpg">
                     <span class="username">John Doe</span>
-                    <b class="caret"></b>
+                    <!-- <b class="caret"></b> -->
                 </a>
                 <ul class="dropdown-menu extended logout">
                     <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>

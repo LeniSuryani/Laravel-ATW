@@ -4,4 +4,17 @@
   border-radius: 10px;
   width: 100%;
 }
+
+.registrasi_ku {
+  background: #f8a100;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+.judul {
+  word-spacing: 3px;
+  letter-spacing: 2px;
+}
 /*# sourceMappingURL=cssku.css.map */

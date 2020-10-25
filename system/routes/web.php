@@ -40,7 +40,7 @@ Route::get('/template.detail', function () {
     return view('template.detail');
 });
 
-//////////Admin
+////////////////  ADMIN  /////////////////////////////////
 Route::get('/template.admin', function () { ////sebagai halaman utama
     return view('template.admin.beranda');
 });
@@ -59,4 +59,8 @@ Route::get('/template.admin.master', function () {
 
 Route::get('/template.admin.produk', function () {
     return view('template.admin.produk');
+});
+
+Route::get('/template.registrasi', function () {
+    return view('template.registrasi');
 });

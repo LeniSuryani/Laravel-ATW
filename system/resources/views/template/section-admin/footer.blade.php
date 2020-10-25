@@ -1,5 +1,5 @@
 <div class="footer">
     <div class="wthree-copyright">
-        <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+        <p class="judul text-center"> copyright © 2020 @if(date("Y") > '2020') - {{date("Y")}} @endif | Build with <i class="fa fa-heart text-danger text"></i> by Leni Suryani</p>
     </div>
 </div>

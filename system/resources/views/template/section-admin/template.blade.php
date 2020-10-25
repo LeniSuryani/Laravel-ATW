@@ -10,9 +10,10 @@
         <!--sidebar end-->
 
         <!--main content start-->
+
         <section id="main-content">
             <section class="wrapper">
-                <h1>master data</h1>
+                @yield('content')
             </section>
             <!-- footer -->
             @include('template.section-admin.footer')

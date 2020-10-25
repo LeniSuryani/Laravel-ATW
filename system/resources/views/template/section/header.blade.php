@@ -1,3 +1,11 @@
+<!-- untuk membuat link sidebar/ link navbar nya bisa dinamis -->
+@php
+
+function checkRouteActive($route){
+if(Route::current()->uri == $route) return 'active';
+}
+@endphp
+
 <div class="top-header-content">
     <header class="tophny-header">
         <div class="container-fluid">
@@ -8,6 +16,8 @@
                 </div>
                 <!--//left-->
                 <!--/right-->
+
+                <!--/register-->
                 <ul class="top-hnt-right-content col-lg-6">
 
                     <li class="button-log usernhy">
@@ -15,23 +25,31 @@
                             <span class="fa fa-user" aria-hidden="true"></span>
                         </a>
                     </li>
+                    <li class="transmitvcart galssescart2 cart cart box_1">
+                        <form action="#" method="post" class="last">
+                            <a href="{{url('/template.registrasi')}}" name="submit" value="" style="font-weight: lighter; font-size:small;  background: rgb(248, 161, 0); padding:8px; border-radius:10px">
+                                Register
+                            </a>
 
+                        </form>
+                    </li>
                 </ul>
-                <!--//right-->
+                <!--//akhir register-->
+                <!--//login-->
                 <div class="overlay-login text-left">
                     <button type="button" class="overlay-close1">
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
                     <div class="wrap">
-                        <h5 class="text-center mb-4">Login </h5>
+                        <h5 class="text-center mb-4">LOGIN SEBAGAI ADMIN </h5>
                         <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
                             <!--/login-form-->
                             <form action="#" method="post">
                                 <div class="form-group">
                                     <p class="login-texthny mb-2">Email </p>
                                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email
-                                        with anyone else.</small>
+                                    <small id="emailHelp" class="form-text text-muted"> Data anda aman bersama kami </small>
+
                                 </div>
                                 <div class="form-group">
                                     <p class="login-texthny mb-2">Password</p>
@@ -54,7 +72,9 @@
                         <!---->
                     </div>
                 </div>
-                <!-- akhir right -->
+                <!-- akhir login -->
+
+
             </div>
         </div>
         <!--/nav-->
@@ -91,13 +111,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active ">
+                        <li class="nav-item {{checkRouteActive('/template')}}">
                             <a class="nav-link" href="{{ url('/template') }}">Home</a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item {{checkRouteActive('/template.product')}}">
                             <a class="nav-link" href="{{ url('/template.product') }}">Product</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{checkRouteActive('template.discount')}}">
                             <a class="nav-link" href="{{ url('/template.discount') }}">Discount</a>
                         </li>
                     </ul>
