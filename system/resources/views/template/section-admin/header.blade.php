@@ -28,7 +28,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="{{url('public')}}/assets/images/bunga.jpg">
-                    <span class="username">John Doe</span>
+                    <span class="username">Leni Suryani</span>
                     <!-- <b class="caret"></b> -->
                 </a>
                 <ul class="dropdown-menu extended logout">
