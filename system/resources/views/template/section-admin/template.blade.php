@@ -13,6 +13,13 @@
 
         <section id="main-content">
             <section class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            @include('template.utils.notif')
+                        </div>
+                    </div>
+                </div>
                 @yield('content')
             </section>
             <!-- footer -->

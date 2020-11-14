@@ -18,7 +18,8 @@ if(Route::current()->uri == $route) return 'active';
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/template.admin.produk')}}" class="{{checkRouteActive('template.admin.produk')}}">
+                    <!-- tulisan produk di checkRouteActive harus sama dengan yg di url -->
+                    <a href="{{url('produk')}}" class="{{checkRouteActive('produk')}}">
                         <i class="fas fa-tshirt"></i>
                         <span>Produk</span>
                     </a>
