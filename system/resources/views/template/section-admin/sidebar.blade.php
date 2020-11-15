@@ -25,7 +25,7 @@ if(Route::current()->uri == $route) return 'active';
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/template.admin.kategori')}}" class="{{checkRouteActive('template.admin.kategori')}}">
+                    <a href="{{url('/kategori')}}" class="{{checkRouteActive('kategori')}}">
                         <i class="fab fa-delicious"></i>
                         <span>Kategori</span>
                     </a>

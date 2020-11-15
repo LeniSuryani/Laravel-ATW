@@ -4,6 +4,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\UserKategoriController;
+use App\Http\Controllers\UserProdukController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,18 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-////////////////// pengguna ////////////////////////////
-Route::get('template', [HomeController::class, 'showBeranda']);
-Route::get('template.product', [HomeController::class, 'showProduct']);
-Route::get('template.discount', [HomeController::class, 'showDiscount']);
-Route::get('template.detail', [HomeController::class, 'showDetail']);
-Route::get('template.login', [AuthController::class, 'showLogin']);
-
-
-// Route::get('/template', function () {
-//     return view('template.base');
-// });
-
 /////////// Produk
 // get('produk) ini merupakan link/url nya yg bisa di simpen ke menu
 // dan class, 'index' merupakan function yg ada di controller
@@ -46,6 +37,46 @@ Route::put('produk/{produk}', [ProdukController::class, 'update']);
 Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
 
 
+/////////// Kategori
+// get('produk) ini merupakan link/url nya yg bisa di simpen ke menu
+// dan class, 'index' merupakan function yg ada di controller
+Route::get('kategori', [KategoriController::class, 'index']); //mendefinisikan link, lalu di arahkan ke controller yg menampilkan view.produk.index
+Route::get('kategori/create', [KategoriController::class, 'create']);
+Route::post('kategori', [KategoriController::class, 'store']); //dari view(create)lalu ke routes dan mengarah ke Produk Controller
+Route::get('kategori/{kategori}', [KategoriController::class, 'show']);
+Route::get('kategori/{kategori}/edit', [KategoriController::class, 'edit']);
+Route::put('kategori/{kategori}', [KategoriController::class, 'update']);
+Route::delete('kategori/{kategori}', [KategoriController::class, 'destroy']);
+
+
+// //////// User hanya dapat read dan show data, 
+// menampilkan kategori di dropdown
+Route::get('template', [UserKategoriController::class, 'showBeranda']);
+
+
+// menampilkan produk
+Route::get('userproduk', [UserProdukController::class, 'index']);
+Route::get('userproduk/{userproduk}', [UserProdukController::class, 'show']);
+
+
+
+
+
+
+
+
+
+////////////////// pengguna ////////////////////////////
+// Route::get('template', [HomeController::class, 'showBeranda']);
+Route::get('template.product', [HomeController::class, 'showProduct']);
+Route::get('template.discount', [HomeController::class, 'showDiscount']);
+Route::get('template.detail', [HomeController::class, 'showDetail']);
+Route::get('template.login', [AuthController::class, 'showLogin']);
+
+
+// Route::get('/template', function () {
+//     return view('template.base');
+// });
 
 ////////////////  ADMIN  /////////////////////////////////
 
