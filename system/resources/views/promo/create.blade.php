@@ -7,35 +7,25 @@
         <div class="col-md-12 mt-2">
             <div class="card">
                 <div class="card-header">
-                    Tambah Data Produk
+                    Tambah Data Diskon dan Promo
                 </div>
                 <div class="card-body">
                     <!-- mengarah ke routes/web -->
-                    <form action="{{url('admin/produk')}}" method="post">
+                    <form action="{{url('admin/promo')}}" method="post">
                         <!-- syntac keamanan dari laravel-->
                         @csrf
-                        <div class="form-group">
-                            <label for="" class="control-label">Nama</label>
-                            <input type="text" name="nama" id="" class="form-control">
-                        </div>
-
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="" class="control-label">Harga</label>
-                                    <input type="text" name="harga" id="" class="form-control">
+                                    <label for="" class="control-label">Nama Promo</label>
+                                    <input type="text" name="nama" id="" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="" class="control-label">Berat</label>
-                                    <input type="text" name="berat" id="" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="" class="control-label">Stok</label>
-                                    <input type="text" name="stok" id="" class="form-control">
+                                    <label for="" class="control-label">Diskon</label>
+                                    <input type="text" name="diskon" id="" class="form-control">
                                 </div>
                             </div>
                         </div>

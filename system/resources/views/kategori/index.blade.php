@@ -7,7 +7,7 @@
         <div class="container py-lg-1">
             <h3 class="hny-title mb-0 text-center"><span style="color:purple;">Kategori</span> <span style="color: white;">yang dimemiliki</span></h3>
             <p class="text-center my-4">
-                <a href="{{url('kategori/create')}}" class="btn btn-dark"> <i class="fa fa-plus mr-2"></i> Tambah Data Kategori</a>
+                <a href="{{url('admin/kategori/create')}}" class="btn btn-dark"> <i class="fa fa-plus mr-2"></i> Tambah Data Kategori</a>
             </p>
             <!-- /row-->
             <div class="row mt-lg-1 d-flex flex-wrap justify-content-center">
@@ -23,9 +23,9 @@
                             </a>
                         </div>
                         <div class="btn-group">
-                            <a href="{{url('kategori', $kategori->id)}}" class="btn btn-dark"> <i class="fa fa-info"></i></a> </a>
-                            <a href="{{url('kategori', $kategori->id)}}/edit" class="btn btn-warning"> <i class="fa fa-pencil"></i></a> </a>
-                            @include('template.utils.delete', ['url' => url('kategori', $kategori->id)])
+                            <a href="{{url('admin/kategori', $kategori->id)}}" class="btn btn-dark"> <i class="fa fa-info"></i></a> </a>
+                            <a href="{{url('admin/kategori', $kategori->id)}}/edit" class="btn btn-warning"> <i class="fa fa-pencil"></i></a> </a>
+                            @include('template.utils.delete', ['url' => url('admin/kategori', $kategori->id)])
                         </div>
                     </div>
                 </div>

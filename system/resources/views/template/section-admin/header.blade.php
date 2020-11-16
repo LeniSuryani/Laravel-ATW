@@ -12,9 +12,14 @@
     <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
         <ul class="nav top-menu">
-            <h3 style="color:floralwhite;  text-indent: 40px;  letter-spacing: 8px; word-spacing: 8px; font-weight:300; margin-top:4px;">
-                SELAMAT DATANG ADMIN
-            </h3>
+            <h4 class="text-uppercase" style="color:floralwhite;  text-indent: 30px;  letter-spacing: 4px; word-spacing: 4px; font-weight:300; margin-top:4px; ">
+                SELAMAT DATANG
+                @if(Auth::check())
+                {{request()->user()->nama}}
+                @else
+                silahkan login
+                @endif
+            </h4>
         </ul>
         <!--  notification end -->
     </div>
@@ -28,13 +33,20 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="{{url('public')}}/assets/images/bunga.jpg">
-                    <span class="username">Leni Suryani</span>
+                    <span class="username text-uppercase">
+
+                        @if(Auth::check())
+                        {{request()->user()->nama}}
+                        @else
+                        silahkan login
+                        @endif
+                    </span>
                     <!-- <b class="caret"></b> -->
                 </a>
                 <ul class="dropdown-menu extended logout">
                     <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                     <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                    <li><a href="{{url('/template')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                    <li><a href="{{url('logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
                 </ul>
             </li>
             <!-- user login dropdown end -->

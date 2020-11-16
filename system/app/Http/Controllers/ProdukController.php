@@ -32,7 +32,7 @@ class ProdukController extends Controller
 
         $produk->save();
         // ->with('success',) ini merupakan alert
-        return redirect('produk')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('admin/produk')->with('success', 'Data Berhasil Ditambahkan');
     }
     // menampilkan satu data/detail data
     function show(produk $produk)
@@ -58,12 +58,12 @@ class ProdukController extends Controller
 
         $produk->save();
 
-        return redirect('produk')->with('warning', 'Data Berhasil Diubah');
+        return redirect('admin/produk')->with('warning', 'Data Berhasil Diubah');
     }
     // proses menghapus
     function destroy(produk $produk)
     {
         $produk->delete();
-        return redirect('produk')->with('danger', 'Data Berhasil Dihapus');
+        return redirect('admin/produk')->with('danger', 'Data Berhasil Dihapus');
     }
 }

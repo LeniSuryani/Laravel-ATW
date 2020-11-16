@@ -30,7 +30,7 @@ class KategoriController extends Controller
 
         $kategori->save();
         // ->with('success',) ini merupakan alert
-        return redirect('kategori')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('admin/kategori')->with('success', 'Data Berhasil Ditambahkan');
     }
     // menampilkan satu data/detail data
     function show(kategori $kategori)
@@ -54,12 +54,12 @@ class KategoriController extends Controller
 
         $kategori->save();
 
-        return redirect('kategori')->with('warning', 'Data Berhasil Diubah');
+        return redirect('admin/kategori')->with('warning', 'Data Berhasil Diubah');
     }
     // proses menghapus
     function destroy(kategori $kategori)
     {
         $kategori->delete();
-        return redirect('kategori')->with('danger', 'Data Berhasil Dihapus');
+        return redirect('admin/kategori')->with('danger', 'Data Berhasil Dihapus');
     }
 }

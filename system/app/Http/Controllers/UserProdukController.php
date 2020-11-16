@@ -23,4 +23,11 @@ class UserProdukController extends Controller
         $dataa['produk'] = $userproduk;
         return view('UserProduk.show', $data, $dataa);
     }
+
+    function promo()
+    {
+        $data['list_kategori'] = kategori::all();
+        $dataa['list_produk'] = produk::all();
+        return view('template.discount', $data, $dataa); //mengarahkan ke folder view yg mana si file nya
+    }
 }

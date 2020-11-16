@@ -12,11 +12,7 @@
                     <div class="container">
                         <nav aria-label="breadcrumb">
                             <h2 class="hny-title text-center"><span class="lohny">DISCOUNT</span> HANYA MINGGU INI <br> <span class="lohny">30% - 50%</span> </h2>
-                            <ol class="breadcrumb mb-0">
-                                <li><a href="{{ url('/template') }}">Home</a>
-                                    <span class="fa fa-angle-double-right"></span></li>
-                                <li class="active">Discount</li>
-                            </ol>
+
                         </nav>
                     </div>
                 </div>

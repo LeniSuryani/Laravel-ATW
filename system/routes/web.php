@@ -5,29 +5,65 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PromoController;
 use App\Http\Controllers\UserKategoriController;
 use App\Http\Controllers\UserProdukController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-/////////// Produk
-// get('produk) ini merupakan link/url nya yg bisa di simpen ke menu
-// dan class, 'index' merupakan function yg ada di controller
+////////      ADMIN
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('produk', ProdukController::class);
+    Route::resource('kategori', KategoriController::class);
+    Route::resource('user', UserController::class);
+    Route::resource('promo', PromoController::class);
+});
+
+
+///////      USER
+Route::get('template', [UserKategoriController::class, 'showBeranda']);
+// menampilkan promo
+Route::get('userpromo', [UserProdukController::class, 'promo']);
+// menampilkan produk
+Route::get('userproduk', [UserProdukController::class, 'index']);
+Route::get('userproduk/{userproduk}', [UserProdukController::class, 'show']);
+// login
+Route::get('login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('login', [AuthController::class, 'loginProcess']);
+Route::get('logout', [AuthController::class, 'logout']);
+Route::get('register', [AuthController::class, 'showRegister']);
+Route::post('register', [AuthController::class, 'storeRegister']);
+
+
+
+
+// ////////////////  ADMIN dan pengguna  /////////////////////////////////
+Route::get('/template.discount', [HomeController::class, 'showDiscount']);
+Route::get('template.admin', [AdminController::class, 'showAdminBeranda']);
+Route::get('/template.admin', function () { ////sebagai halaman utama
+    return view('template.admin.beranda');
+});
+
+
+// mencoba upload gambar
+Route::get('/upload', 'UploadController@upload');
+Route::post('/upload/proses', 'UploadController@proses_upload');
+
+
+
+
+/*
+contoh crud yg baru"
+Route::resource('produk', ProdukController::class);
+
+
+contoh crud yg lama:
 Route::get('produk', [ProdukController::class, 'index']); //mendefinisikan link, lalu di arahkan ke controller yg menampilkan view.produk.index
 Route::get('produk/create', [ProdukController::class, 'create']);
 Route::post('produk', [ProdukController::class, 'store']); //dari view(create)lalu ke routes dan mengarah ke Produk Controller
@@ -36,58 +72,4 @@ Route::get('produk/{produk}/edit', [ProdukController::class, 'edit']);
 Route::put('produk/{produk}', [ProdukController::class, 'update']);
 Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
 
-
-/////////// Kategori
-// get('produk) ini merupakan link/url nya yg bisa di simpen ke menu
-// dan class, 'index' merupakan function yg ada di controller
-Route::get('kategori', [KategoriController::class, 'index']); //mendefinisikan link, lalu di arahkan ke controller yg menampilkan view.produk.index
-Route::get('kategori/create', [KategoriController::class, 'create']);
-Route::post('kategori', [KategoriController::class, 'store']); //dari view(create)lalu ke routes dan mengarah ke Produk Controller
-Route::get('kategori/{kategori}', [KategoriController::class, 'show']);
-Route::get('kategori/{kategori}/edit', [KategoriController::class, 'edit']);
-Route::put('kategori/{kategori}', [KategoriController::class, 'update']);
-Route::delete('kategori/{kategori}', [KategoriController::class, 'destroy']);
-
-
-// //////// User hanya dapat read dan show data, 
-// menampilkan kategori di dropdown
-Route::get('template', [UserKategoriController::class, 'showBeranda']);
-
-
-// menampilkan produk
-Route::get('userproduk', [UserProdukController::class, 'index']);
-Route::get('userproduk/{userproduk}', [UserProdukController::class, 'show']);
-
-
-
-
-
-
-
-
-
-////////////////// pengguna ////////////////////////////
-// Route::get('template', [HomeController::class, 'showBeranda']);
-Route::get('template.product', [HomeController::class, 'showProduct']);
-Route::get('template.discount', [HomeController::class, 'showDiscount']);
-Route::get('template.detail', [HomeController::class, 'showDetail']);
-Route::get('template.login', [AuthController::class, 'showLogin']);
-
-
-// Route::get('/template', function () {
-//     return view('template.base');
-// });
-
-////////////////  ADMIN  /////////////////////////////////
-
-Route::get('template.admin', [AdminController::class, 'showAdminBeranda']);
-Route::get('template.admin.kategori', [AdminController::class, 'showAdminKategori']);
-Route::get('template.admin.promo', [AdminController::class, 'showAdminPromo']);
-Route::get('template.admin.master', [AdminController::class, 'showAdminMaster']);
-// Route::get('template.admin.produk', [AdminController::class, 'showAdminProduk']);
-Route::get('template.registrasi', [AdminController::class, 'showAdminRegistrasi']);
-Route::get('template.admin.leni', [AdminController::class, 'showAdminLeni']);
-
-// Route::get('/template.admin', function () { ////sebagai halaman utama
-//     return view('template.admin.beranda');
-// });
+*/

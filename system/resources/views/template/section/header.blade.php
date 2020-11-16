@@ -21,15 +21,22 @@ if(Route::current()->uri == $route) return 'active';
                 <!--/register-->
                 <ul class="top-hnt-right-content col-lg-6">
 
-                    <li class="button-log usernhy">
-                        <a class="btn-open" href="#">
+                    <!-- <li class="button-log usernhy">
+                        <a class="btn-open" href="#login-ku">
                             <span class="fa fa-user" aria-hidden="true"></span>
                         </a>
+                    </li> -->
+                    <li class="transmitvcart galssescart2 cart cart box_1">
+                        <form action="#" method="post" class="last">
+                            <a href="{{url('login')}}" class="btn btn-outline-warning btn-sm" name="submit">
+                                LOGIN
+                            </a>
+                        </form>
                     </li>
                     <li class="transmitvcart galssescart2 cart cart box_1">
                         <form action="#" method="post" class="last">
-                            <a href="{{url('/template.registrasi')}}" name="submit" value="" style="font-weight: lighter; font-size:small;  background: rgb(248, 161, 0); padding:8px; border-radius:10px">
-                                Register
+                            <a href="{{url('register')}}" class="btn btn-warning btn-sm" name="submit" value="">
+                                DAFTAR
                             </a>
 
                         </form>
@@ -37,14 +44,15 @@ if(Route::current()->uri == $route) return 'active';
                 </ul>
                 <!--//akhir register-->
                 <!--//login-->
-                <div class="overlay-login text-left">
+                <!-- <div id="login-ku" class="overlay-login text-left">
                     <button type="button" class="overlay-close1">
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
                     <div class="wrap">
                         <h5 class="text-center mb-4">LOGIN SEBAGAI ADMIN </h5>
                         <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
-                            <!--/login-form-->
+                           
+
                             <form action="#" method="post">
                                 <div class="form-group">
                                     <p class="login-texthny mb-2">Email </p>
@@ -68,11 +76,11 @@ if(Route::current()->uri == $route) return 'active';
                                 <a href="{{url('/template.admin')}}" class="submit-login-ku btn mb-4">Sign In</a>
 
                             </form>
-                            <!--//login-form-->
+                            
                         </div>
-                        <!---->
+                       
                     </div>
-                </div>
+                </div> -->
                 <!-- akhir login -->
 
 
@@ -112,14 +120,14 @@ if(Route::current()->uri == $route) return 'active';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item {{checkRouteActive('/template')}}">
-                            <a class="nav-link" href="{{ url('/template') }}" class="{{checkRouteActive('template')}}">
-                                Home
+                        <li class="nav-item {{checkRouteActive('template')}}">
+                            <a class="nav-link" href="{{ url('/template') }}">
+                                HOME
                             </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kategori
+                                KATEGORI
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach($list_kategori as $kategori)
@@ -127,14 +135,14 @@ if(Route::current()->uri == $route) return 'active';
                                 @endforeach
                             </div>
                         </li>
-                        <li class="nav-item {{checkRouteActive('/template.product')}}">
-                            <a class="nav-link" href="{{ url('/userproduk') }}" class="{{checkRouteActive('userproduk')}}">
-                                Product
+                        <li class="nav-item {{checkRouteActive('userproduk')}}">
+                            <a class="nav-link" href="{{ url('/userproduk') }}">
+                                PRODUK
                             </a>
                         </li>
-                        <li class="nav-item {{checkRouteActive('template.discount')}}">
-                            <a class="nav-link" href="{{ url('/template.discount') }}" class="{{checkRouteActive('template.discount')}}">
-                                Discount
+                        <li class="nav-item {{checkRouteActive('userpromo')}}">
+                            <a class="nav-link" href="{{ url('/userpromo') }}">
+                                DISKON
                             </a>
                         </li>
                     </ul>

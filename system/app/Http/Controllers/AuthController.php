@@ -2,20 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Models\User;
+
 class AuthController extends Controller
 {
 
     function showLogin()
     {
+        return view('login');
     }
-    function processLogin()
+
+    function loginProcess()
     {
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+            return redirect('template.admin')->with('success', 'Login Berhasil');
+        } else {
+            // return redirect('template.admin')->with('success', 'Login Berhasil');
+            return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
+        }
     }
+
     function logout()
     {
+        Auth::logout();
+        return redirect('template');
     }
-    function Registration()
+
+    function showRegister()
     {
+        return view('register');
+    }
+    function storeRegister()
+    {
+        // produk ini sama dengan model
+        $user = new user;
+        // // kiri= nama (database), kanan= nama(codingan view)
+        $user->nama = request('nama');
+        $user->username = request('username');
+        $user->password = bcrypt(request('password'));
+        $user->email = request('email');
+
+        $user->save();
+        // ->with('success',) ini merupakan alert
+        return redirect('login')->with('success', 'Silahkan Login');
     }
     function forgotPassword()
     {

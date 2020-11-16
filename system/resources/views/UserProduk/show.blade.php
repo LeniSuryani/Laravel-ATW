@@ -15,13 +15,6 @@
                             <p class="text-center" style="color: azure;">
                                 Fashion Wanita | Fashion Pria | jewellery | Sendal Sepatu
                             </p>
-                            <ol class="breadcrumb mb-0">
-                                <li><a href="{{url('./template')}}">Home</a>
-                                    <span class="fa fa-angle-double-right"></span></li>
-                                <li><a href="{{url('./template.product')}}">Product</a>
-                                    <span class="fa fa-angle-double-right"></span></li>
-                                <li>Detail</li>
-                            </ol>
                         </nav>
                     </div>
                 </div>

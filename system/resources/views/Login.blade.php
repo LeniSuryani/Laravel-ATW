@@ -1,13 +1,7 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 
 <head>
-    <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Login :: w3layouts</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -39,19 +33,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
     <div class="log-w3">
         <div class="w3layouts-main">
-            <h2>Register</h2>
-            <form action="#" method="post">
-                <input type="text" class="ggg" name="Name" placeholder="NAME" required="">
-                <input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
-                <input type="text" class="ggg" name="Phone" placeholder="PHONE" required="">
-                <input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-                <h4><input type="checkbox" />Saya setuju dengan Persyaratan dan Kebijakan Privasi</h4>
+            <h2>Login</h2>
+            <div class="panel-body">
+                @include('template.utils.notif')
+                <form action="{{url('login')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label class="control-label" for="email">Email</label>
+                        <input class="ggg" type="text" placeholder="Email" title="Please enter you email" required="" value="" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="password">Password</label>
+                        <input class="ggg" type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                    </div>
 
-                <div class="clearfix"></div>
 
-                <input style="border-radius: 20px;" type="submit" value="submit" name="register">
-            </form>
-            <p><a href="{{url('/template')}}">Kembali</a></p>
+                    <input style="border-radius: 20px;" type="submit" value="submit" name="login">
+
+
+
+                    <div style="display: flex; margin-top: 15px; justify-content:center">
+                        <a class="btn btn-outline-dark" href="{{url('template')}}"> KEMBALI</a>
+                        <p style="margin-top: 5px;">|</p>
+                        <a class="btn btn-outline-dark" href="{{url('register')}}"> DAFTAR</a>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- <input style="border-radius: 20px;" type="submit" value="submit" name="register"> -->
+
+            <!-- <p><a href="{{url('/template')}}">Kembali</a></p> -->
         </div>
     </div>
     <script src="{{url('public')}}/assets_admin/js/bootstrap.js"></script>
@@ -59,7 +71,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="{{url('public')}}/assets_admin/js/scripts.js"></script>
     <script src="{{url('public')}}/assets_adminjs/jquery.slimscroll.js"></script>
     <script src="{{url('public')}}/assets_adminjs/jquery.nicescroll.js"></script>
-    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
     <script src="{{url('public')}}/assets_adminjs/jquery.scrollTo.js"></script>
 </body>
 

@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <!-- mengarah ke routes/web -->
-                    <form action="{{url('kategori', $kategori->id)}}" method="post">
+                    <form action="{{url('admin/kategori', $kategori->id)}}" method="post">
                         <!-- syntac keamanan dari laravel-->
                         @csrf
                         @method("PUT")
