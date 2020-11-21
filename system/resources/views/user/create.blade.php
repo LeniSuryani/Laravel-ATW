@@ -38,6 +38,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="" class="control-label">No Handphone</label>
+                            <input type="text" name="no_hp" id="" class="form-control">
+                        </div>
                         <button class="btn btn-dark float-right"><i class="fa fa-save mr-2"></i>Simpan</button>
                     </form>
                 </div>

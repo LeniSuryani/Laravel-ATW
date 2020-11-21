@@ -26,6 +26,8 @@ class ProdukController extends Controller
         // // kiri= nama (database), kanan= nama(codingan view)
         $produk->nama = request('nama');
         $produk->harga = request('harga');
+        $produk->size = request('size');
+        $produk->color = request('color');
         $produk->berat = request('berat');
         $produk->deskripsi = request('deskripsi');
         $produk->stok = request('stok');
@@ -52,6 +54,8 @@ class ProdukController extends Controller
         // // kiri= nama (database), kanan= nama(codingan view)
         $produk->nama = request('nama');
         $produk->harga = request('harga');
+        $produk->size = request('size');
+        $produk->color = request('color');
         $produk->berat = request('berat');
         $produk->stok = request('stok');
         $produk->deskripsi = request('deskripsi');
@@ -65,5 +69,52 @@ class ProdukController extends Controller
     {
         $produk->delete();
         return redirect('admin/produk')->with('danger', 'Data Berhasil Dihapus');
+    }
+
+    function filter()
+    {
+        // search nama yg mirip
+        // $nama = request('nama');
+        // $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
+        // $data['nama'] = $nama;
+        // return view('produk.index', $data);
+
+        // range harga
+        // $data['harga_min'] = $harga_min = request('harga_min');
+        // $data['harga_max'] = $harga_max = request('harga_max');
+        // $data['list_produk'] = Produk::whereBetween('harga', [$harga_min, $harga_max])->get();
+        // return view('produk.index', $data);
+
+        // untuk unlist pada satu stok (where)
+        // $data['stok'] = $stok = request('stok');
+        // $data['list_produk'] = Produk::where('stok', '<>', $stok)->get();
+        // return view('produk.index', $data);
+
+        // untuk unlist pada banyak stok  (whereIn) contoh inputan(9,8)
+        // $stok = explode(",", request('stok'));
+        // $data['list_produk'] = Produk::whereNotIn('stok', $stok)->get();
+        // $data['stok'] = request('stok');
+        // return view('produk.index', $data);
+
+        // where date
+        // $created_at = request('created_at');
+        // $data['list_produk'] = Produk::whereDate('created_at', $created_at)->get();
+        // $data['list_produk'] = Produk::whereYear('created_at', $created_at)->get();
+        // $data['list_produk'] = Produk::whereMonth('created_at', $created_at)->whereYear('created_at', $created_at)->get();
+        // $data['list_produk'] = Produk::whereTime('created_at', '14:53:17')->get();
+        // $data['created_at'] = request('created_at');
+        // return view('produk.index', $data);
+
+
+        // filter where group
+        $nama = request('nama');
+        $data['harga_min'] = $harga_min = request('harga_min');
+        $data['harga_max'] = $harga_max = request('harga_max');
+        $data['stok'] = $stok = request('stok');
+        $created_at = request('created_at');
+        $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->whereBetween('harga', [$harga_min, $harga_max])->where('stok', $stok)->whereYear('created_at', $created_at)->get();
+        $data['created_at'] = request('created_at');
+
+        return view('produk.index', $data);
     }
 }

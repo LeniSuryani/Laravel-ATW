@@ -30,4 +30,20 @@ class UserProdukController extends Controller
         $dataa['list_produk'] = produk::all();
         return view('template.discount', $data, $dataa); //mengarahkan ke folder view yg mana si file nya
     }
+
+    function filter()
+    {
+        $data['list_kategori'] = kategori::all();
+        // filter where group
+        $nama = request('nama');
+        $data['harga_min'] = $harga_min = request('harga_min');
+        $data['harga_max'] = $harga_max = request('harga_max');
+        // $data['size'] = $size = request('size');
+        $size = explode(",", request('size'));
+        $data['color'] = $color = request('color');
+        $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->whereBetween('harga', [$harga_min, $harga_max])->whereIn('size', $size)->where('color', $color)->get();
+        $data['size'] = request('size');
+
+        return view('Userproduk.index', $data);
+    }
 }

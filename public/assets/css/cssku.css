@@ -21,4 +21,46 @@
 .active {
   color: #ff8800;
 }
+
+.filter {
+  background: #dfdfdf;
+  margin-left: 20px;
+  padding: 15px;
+}
+
+.filter p {
+  text-transform: uppercase;
+  font-size: 20px;
+  word-spacing: 7px;
+}
+
+.filter h6 {
+  text-transform: capitalize;
+  background: #ececec;
+  padding: 5px;
+}
+
+.card-header {
+  font-size: medium;
+  text-transform: uppercase;
+  font-weight: large;
+}
+
+.filter-admin {
+  padding: 0;
+}
+
+.filter-admin .card-header {
+  height: 55px;
+}
+
+.filter-admin .form-group {
+  width: 16vw;
+}
+
+.filter-admin .form-group label {
+  color: gray;
+  font-weight: normal;
+  font-size: 15px;
+}
 /*# sourceMappingURL=cssku.css.map */

@@ -30,51 +30,89 @@
         <!-- /products-->
         <div class="ecom-contenthny py-5">
             <div class="container py-lg-5">
-                <h3 class="hny-title mb-0 text-center"><span>Fashion</span> Wanita</h3>
-                <p class="text-center text-upercase">Pilihan Terbaik Untuk Mu</p>
-                <!-- /row-->
-                <div class="ecom-products-grids row mt-lg-5 mt-3">
-                    @foreach($list_produk as $produk)
-                    <div class="col-lg-3 col-6 product-incfhny mt-4">
-                        <div class="product-grid2 transmitv">
 
+                <div class="row" style="display: flex; flex-wrap:nowrap">
+                    <!-- produk-->
+                    <div class="col-lg-9 ecom-products-grids row ">
+                        @foreach($list_produk as $produk)
+                        <div class="col-lg-3 col-6 product-incfhny ">
+                            <div class="product-grid2 transmitv">
+                                <div class="product-image2">
+                                    <a href="#">
+                                        <img class="pic-1 img-fluid" src="{{url('public')}}/assets/images/shop-1.jpg">
+                                        <img class="pic-2 img-fluid" src="{{url('public')}}/assets/images/shop-11.jpg">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="{{url('userproduk', $produk->id)}}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
-                            <div class="product-image2">
-                                <a href="#">
-                                    <img class="pic-1 img-fluid" src="{{url('public')}}/assets/images/shop-1.jpg">
-                                    <img class="pic-2 img-fluid" src="{{url('public')}}/assets/images/shop-11.jpg">
-                                </a>
-                                <ul class="social">
-                                    <li><a href="{{url('userproduk', $produk->id)}}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                    <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                    </li>
-                                </ul>
-                                <div class="transmitv single-item">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart">
-                                        <input type="hidden" name="add" value="1">
-                                        <input type="hidden" name="transmitv_item" value="Women Maroon Top">
-                                        <input type="hidden" name="amount" value="899.99">
-                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                            Add to Cart
-                                        </button>
-                                    </form>
+                                        <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+                                        </li>
+                                    </ul>
+                                    <div class="transmitv single-item">
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="cmd" value="_cart">
+                                            <input type="hidden" name="add" value="1">
+                                            <input type="hidden" name="transmitv_item" value="Women Maroon Top">
+                                            <input type="hidden" name="amount" value="899.99">
+                                            <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
+                                                Add to Cart
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="product-content">
+                                <div class="product-content">
 
-                                <h3 class="title"><a href="#">{{$produk->nama}} </a></h3>
-                                <span class="price"><del>$899.99 </del>{{$produk->harga}}</span>
+                                    <h3 class="title"><a href="#">{{$produk->nama}} </a></h3>
+                                    <span class="price"><del>$899.99 </del>{{$produk->harga}}</span>
+
+                                </div>
 
                             </div>
 
                         </div>
-
+                        @endforeach
                     </div>
-                    @endforeach
+                    <!-- akhir produk-->
+                    <!-- filter -->
+                    <div class="filter col-lg-3">
+                        <form action="{{url('userproduk/filter')}}" method="post">
+                            @csrf
+                            <p>Filter Produk</p>
+                            <hr>
+                            <div class="nama">
+                                <h6>Nama</h6>
+                                <input type="text" class="form-control form-control-sm" name="nama" value="{{$nama ?? ""}}" required>
+                            </div>
+                            <hr>
+                            <div class="harga">
+                                <h6>price range</h6>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationDefault01">Min</label>
+                                        <input type="text" class="form-control form-control-sm" name="harga_min" value="{{$harga_min ?? ""}}" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationDefault02">Max</label>
+                                        <input type="text" class="form-control form-control-sm" name="harga_max" value="{{$harga_max ?? ""}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="ukuran">
+                                <h6>size</h6>
+                                <input type="text" class="form-control form-control-sm" name="size" value="{{$size ?? ""}}" required>
+                            </div>
+                            <hr>
+                            <div class="warna">
+                                <h6>Color</h6>
+                                <input type="text" class="form-control form-control-sm" name="color" value="{{$color ?? ""}}" required>
+                            </div>
+
+                            <button class="btn-sm btn btn-dark float-right mt-4"> <i class="fa fa-search"></i> Cari Data</button>
+                        </form>
+                    </div>
+                    <!-- akhir filter -->
                 </div>
-                <!-- //row-->
             </div>
         </div>
     </section>

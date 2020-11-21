@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserDetail;
 
 class UserController extends Controller
 {
@@ -28,8 +29,13 @@ class UserController extends Controller
         $user->username = request('username');
         $user->password = bcrypt(request('password'));
         $user->email = request('email');
-
         $user->save();
+
+        $UserDetail = new UserDetail;
+        $UserDetail->id_user = $user->id;
+        $UserDetail->no_hp = request('no_hp');
+        $UserDetail->save();
+
         // ->with('success',) ini merupakan alert
         return redirect('admin/user')->with('success', 'Data Berhasil Ditambahkan');
     }

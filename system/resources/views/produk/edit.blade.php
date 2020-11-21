@@ -27,6 +27,18 @@
                                     <input type="text" name="harga" id="" class="form-control" value="{{$produk->harga}}">
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="" class="control-label">Size</label>
+                                    <input type="text" name="size" id="" class="form-control" value="{{$produk->size}}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="" class="control-label">Color</label>
+                                    <input type="text" name="color" id="" class="form-control" value="{{$produk->color}}">
+                                </div>
+                            </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="" class="control-label">Berat</label>

@@ -14,6 +14,8 @@
                     <hr>
                     <p>
                         Harga: Rp.{{number_format($produk->harga)}} <br>
+                        Warna: {{($produk->color)}} <br>
+                        Size: {{($produk->size)}} <br>
                         Stok: {{($produk->stok)}} <br>
                         Berat: {{($produk->berat)}} gr
                     </p>

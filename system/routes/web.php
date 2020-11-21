@@ -20,6 +20,7 @@ Route::get('/', function () {
 ////////      ADMIN
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('produk', ProdukController::class);
+    Route::post('produk/filter', [ProdukController::class, 'filter']);
     Route::resource('kategori', KategoriController::class);
     Route::resource('user', UserController::class);
     Route::resource('promo', PromoController::class);
@@ -32,6 +33,7 @@ Route::get('template', [UserKategoriController::class, 'showBeranda']);
 Route::get('userpromo', [UserProdukController::class, 'promo']);
 // menampilkan produk
 Route::get('userproduk', [UserProdukController::class, 'index']);
+Route::post('userproduk/filter', [UserProdukController::class, 'filter']);
 Route::get('userproduk/{userproduk}', [UserProdukController::class, 'show']);
 // login
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');
@@ -51,9 +53,6 @@ Route::get('/template.admin', function () { ////sebagai halaman utama
 });
 
 
-// mencoba upload gambar
-Route::get('/upload', 'UploadController@upload');
-Route::post('/upload/proses', 'UploadController@proses_upload');
 
 
 

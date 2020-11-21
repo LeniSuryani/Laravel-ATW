@@ -22,3 +22,46 @@
 .active {
     color: #ff8800;
 }
+
+.filter {
+    background: rgb(223, 223, 223);
+    margin-left: 20px;
+    padding: 15px;
+
+    p {
+        text-transform: uppercase;
+        font-size: 20px;
+        word-spacing: 7px;
+    }
+
+    h6 {
+        text-transform: capitalize;
+        background: rgb(236, 236, 236);
+        padding: 5px;
+    }
+}
+
+.card-header {
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: large;
+}
+
+.filter-admin {
+    padding: 0;
+
+    .card-header {
+        height: 55px;
+    }
+
+    .form-group {
+        width: 16vw;
+
+        label {
+            color: gray;
+            font-weight: normal;
+            font-size: 15px;
+        }
+    }
+
+}

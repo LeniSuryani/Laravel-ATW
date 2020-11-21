@@ -14,7 +14,8 @@
                     <hr>
                     <p>
                         Username: @ {{$user->username}} <br>
-                        Email: {{$user->email}}
+                        Email: {{$user->email}} <br>
+                        No-Handphone: {{$user->detail->no_hp}}
                     </p>
                 </div>
             </div>

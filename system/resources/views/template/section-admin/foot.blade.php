@@ -137,3 +137,32 @@
     });
 </script>
 <!-- //calendar -->
+
+
+<!-- untuk responsive data tables -->
+<script type="text/javascript" src="{{url('public')}}/assets_admin/DataTables/DataTables-1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{url('public')}}/assets_admin/DataTables/Responsive-2.2.6/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="{{url('public')}}/assets_admin/DataTables/SearchBuilder-1.0.0/js/dataTables.searchBuilder.min.js"></script>
+<script type="text/javascript" src="{{url('public')}}/assets_admin/DataTables/SearchPanes-1.2.1/js/dataTables.searchPanes.min.js"></script>
+<script type="text/javascript" src="{{url('public')}}/assets_admin/DataTables/Select-1.3.1/js/dataTables.select.min.js"></script>
+
+<script>
+    // This file is required by the index.html file and will
+    // be executed in the renderer process for that window.
+    // All of the Node.js APIs are available in this process.
+    window.$ = window.jquery = require('./node_modules/jquery');
+    window.dt = require('./node_modules/datatables.net')();
+    window.$('#table_id').DataTable();
+
+
+    $(document).ready(function() {
+        $('#table_id').DataTable();
+    });
+
+    // This file is required by the index.html file and will
+    // be executed in the renderer process for that window.
+    // All of the Node.js APIs are available in this process.
+    window.$ = window.jquery = require('./node_modules/jquery');
+    window.dt = require('./node_modules/datatables.net')();
+    window.$('#table_id').DataTable();
+</script>

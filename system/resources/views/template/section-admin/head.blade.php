@@ -43,4 +43,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="{{url('public')}}/assets_admin/js/jquery2.0.3.min.js"></script>
     <script src="{{url('public')}}/assets_admin/js/raphael-min.js"></script>
     <script src="{{url('public')}}/assets_admin/js/morris.js"></script>
+
+
+    <!-- script untuk responsive tables -->
+    <!-- //cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css -->
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets_admin/DataTables/DataTables-1.10.22/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets_admin/DataTables/Responsive-2.2.6/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets_admin/DataTables/SearchBuilder-1.0.0/css/searchBuilder.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets_admin/DataTables/SearchPanes-1.2.1/css/searchPanes.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets_admin/DataTables/Select-1.3.1/css/select.dataTables.min.css" />
+    <script>
+        // This file is required by the index.html file and will
+        // be executed in the renderer process for that window.
+        // All of the Node.js APIs are available in this process.
+        window.$ = window.jquery = require('./node_modules/jquery');
+        window.dt = require('./node_modules/datatables.net')();
+        window.$('#table_id').DataTable();
+
+
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+    <!-- sisanya ada di footer -->
 </head>
