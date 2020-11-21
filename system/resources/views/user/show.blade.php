@@ -15,7 +15,7 @@
                     <p>
                         Username: @ {{$user->username}} <br>
                         Email: {{$user->email}} <br>
-                        No-Handphone: {{$user->detail->no_hp}}
+                        No-Handphone: {{$user->detail->no_hp}} <!-- $user = merujuk pada model user, ->detail = merujuk pada function yg ada pada mode user -->
                     </p>
                 </div>
             </div>

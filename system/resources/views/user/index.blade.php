@@ -17,6 +17,7 @@
                             <th>NO</th>
                             <th>Aksi</th>
                             <th>Nama</th>
+                            <th>Produk</th>
                             <th>Username</th>
                             <th>Email</th>
 
@@ -31,6 +32,7 @@
                                     @include('template.utils.delete', ['url' => url('admin/user', $user->id)])
                                 </td>
                                 <td>{{$user->nama}}</td>
+                                <td>{{$user->produk_count}}</td>
                                 <td>{{$user->username}}</td>
                                 <td>{{$user->email}}</td>
                             </tr>

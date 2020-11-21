@@ -11,7 +11,8 @@ class UserController extends Controller
     // menampilkan seluruh data
     function index()
     {
-        $data['list_user'] = user::all();
+        //withCount digunakan untuk menghitung jumlah produk yg diinput oleh user tersebut
+        $data['list_user'] = user::withCount('produk')->get();
         return view('user.index', $data); //mengarahkan ke folder view yg mana si file nya
     }
     // menampilkan form untuk input data baru
@@ -63,6 +64,11 @@ class UserController extends Controller
         if (request('password')) $user->password = bcrypt(request('password'));
         $user->save();
 
+        // relasi one to one
+        // $UserDetail = new UserDetail;
+        // $UserDetail->id_user = $user->id;
+        $user->detail->no_hp = request('no_hp');
+        $user->detail->save();
         return redirect('admin/user')->with('warning', 'Data Berhasil Diubah');
     }
     // proses menghapus

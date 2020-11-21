@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-    <div class="log-w3">
+    <div class="log-w3" style="margin-top: -15px;">
         <div class="w3layouts-main">
             <h2>Register</h2>
             @include('template.utils.notif')
@@ -55,7 +55,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label for="" class="control-label">Username</label>
                         <input type="text" name="username" id="" class="form-control ggg">
                     </div>
-
+                    <div class="form-group">
+                        <label for="" class="control-label">No-Handphone</label>
+                        <input type="text" name="no_hp" id="" class="form-control ggg">
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

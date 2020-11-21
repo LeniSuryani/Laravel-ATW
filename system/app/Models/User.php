@@ -17,12 +17,12 @@ class User extends Authenticatable
     // untuk merelasikan one to one ke user detail
     function detail()
     {
-        return $this->hasOne(UserDetail::class, 'id_user');
+        return $this->hasOne(UserDetail::class, 'id_user'); //id_user adalah foreign key nya
     }
 
     // one to many, merelasikan user dengan produk
     function produk()
     {
-        return $this->hasMany(Produk::class, 'id_user');
+        return $this->hasMany(Produk::class, 'id_user'); //id_user adalah foreign key nya
     }
 }

@@ -20,6 +20,7 @@
                         Berat: {{($produk->berat)}} gr
 
                         <br><br>
+                        <!-- $produk = merujuk pada model produk, ->seller = merujuk pada function yg ada pada mode produk -->
                         Seller: {{($produk->seller->nama)}} <!-- hubungan nya dengan model produk -->
                     </p>
                     <br>

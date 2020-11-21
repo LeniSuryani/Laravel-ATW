@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\User;
+use App\Models\UserDetail;
 
 class AuthController extends Controller
 {
@@ -42,8 +43,13 @@ class AuthController extends Controller
         $user->username = request('username');
         $user->password = bcrypt(request('password'));
         $user->email = request('email');
-
         $user->save();
+
+        // relasi one to one
+        $UserDetail = new UserDetail;
+        $UserDetail->id_user = $user->id;
+        $UserDetail->no_hp = request('no_hp');
+        $UserDetail->save();
         // ->with('success',) ini merupakan alert
         return redirect('login')->with('success', 'Silahkan Login');
     }

@@ -23,6 +23,10 @@
                             <label for="" class="control-label">Email</label>
                             <input type="email" name="email" id="" class="form-control" value="{{$user->email}}">
                         </div>
+                        <div class="form-group">
+                            <label for="" class="control-label">No-Handphone</label>
+                            <input type="text" name="no_hp" id="" class="form-control" value="{{$user->detail->no_hp}}">
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

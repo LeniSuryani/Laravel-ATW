@@ -59,6 +59,7 @@ class ProdukController extends Controller
     function update(produk $produk)
     {
         // // kiri= nama (database), kanan= nama(codingan view)
+        $produk->id_user =  request()->user()->id; //foreign key
         $produk->nama = request('nama');
         $produk->harga = request('harga');
         $produk->size = request('size');
