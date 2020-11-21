@@ -18,6 +18,9 @@
                         Size: {{($produk->size)}} <br>
                         Stok: {{($produk->stok)}} <br>
                         Berat: {{($produk->berat)}} gr
+
+                        <br><br>
+                        Seller: {{($produk->seller->nama)}} <!-- hubungan nya dengan model produk -->
                     </p>
                     <br>
                     <p>

@@ -31,6 +31,7 @@ class UserController extends Controller
         $user->email = request('email');
         $user->save();
 
+        // relasi one to one
         $UserDetail = new UserDetail;
         $UserDetail->id_user = $user->id;
         $UserDetail->no_hp = request('no_hp');

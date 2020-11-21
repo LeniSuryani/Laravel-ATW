@@ -10,7 +10,13 @@ class ProdukController extends Controller
     // menampilkan seluruh data
     function index()
     {
-        $data['list_produk'] = produk::all();
+        // untuk menampilin data produk sesuai dengan admin nya masing2 tanpa relasi di model user
+        // $id_user = request()->user()->id;
+        // $data['list_produk'] = produk::where('id_user', $id_user)->get();
+
+        // dengan relasi di model user
+        $userr = request()->user();
+        $data['list_produk'] = $userr->produk; //->produk ini harus sama dengan function yg ada di dlm model user
         return view('produk.index', $data); //mengarahkan ke folder view yg mana si file nya
     }
     // menampilkan form untuk input data baru
@@ -24,6 +30,7 @@ class ProdukController extends Controller
         // produk ini sama dengan model
         $produk = new produk;
         // // kiri= nama (database), kanan= nama(codingan view)
+        $produk->id_user =  request()->user()->id; //foreign key
         $produk->nama = request('nama');
         $produk->harga = request('harga');
         $produk->size = request('size');
