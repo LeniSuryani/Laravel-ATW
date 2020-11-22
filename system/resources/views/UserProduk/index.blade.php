@@ -74,42 +74,61 @@
                     </div>
                     <!-- akhir produk-->
                     <!-- filter -->
-                    <div class="filter col-lg-3">
-                        <form action="{{url('userproduk/filter')}}" method="post">
+                    <div class="filter col-lg-3" style="height: 90vh;">
+                        <form action="{{url('userproduk/filterNama')}}" method="post">
                             @csrf
                             <p>Filter Produk</p>
                             <hr>
                             <div class="nama">
                                 <h6>Nama</h6>
-                                <input type="text" class="form-control form-control-sm" name="nama" value="{{$nama ?? ""}}" required>
-                            </div>
-                            <hr>
-                            <div class="harga">
-                                <h6>price range</h6>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault01">Min</label>
-                                        <input type="text" class="form-control form-control-sm" name="harga_min" value="{{$harga_min ?? ""}}" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault02">Max</label>
-                                        <input type="text" class="form-control form-control-sm" name="harga_max" value="{{$harga_max ?? ""}}" required>
-                                    </div>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control form-control-sm" name="nama" value="{{$nama ?? ""}}" required>
+                                    <button class="btn-sm btn btn-dark float-right"> <i class="fa fa-search"></i></button>
                                 </div>
                             </div>
                             <hr>
+                        </form>
+                        <form action="{{url('userproduk/filterHarga')}}" method="post">
+                            @csrf
+                            <div class="harga">
+                                <h6>price range</h6>
+                                <div class="form-row">
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Min" name="harga_min" value="{{$harga_min ?? ""}}" required>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Max" name="harga_max" value="{{$harga_max ?? ""}}" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn-sm btn btn-dark float-right"> <i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <form action="{{url('userproduk/filterSize')}}" method="post">
+                            @csrf
                             <div class="ukuran">
                                 <h6>size</h6>
-                                <input type="text" class="form-control form-control-sm" name="size" value="{{$size ?? ""}}" required>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control form-control-sm" name="size" value="{{$size ?? ""}}" required>
+                                    <button class="btn-sm btn btn-dark float-right"> <i class="fa fa-search"></i></button>
+                                </div>
                             </div>
-                            <hr>
+                        </form>
+                        <hr>
+                        <form action="{{url('userproduk/filterColor')}}" method="post">
+                            @csrf
                             <div class="warna">
                                 <h6>Color</h6>
-                                <input type="text" class="form-control form-control-sm" name="color" value="{{$color ?? ""}}" required>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control form-control-sm" name="color" value="{{$color ?? ""}}" required>
+                                    <button class="btn-sm btn btn-dark float-right"> <i class="fa fa-search"></i></button>
+                                </div>
                             </div>
-
-                            <button class="btn-sm btn btn-dark float-right mt-4"> <i class="fa fa-search"></i> Cari Data</button>
                         </form>
+                        <!-- <button class="btn-sm btn btn-dark float-right mt-4"> <i class="fa fa-search"></i> Cari Data</button> -->
+                        <!-- </form> -->
                     </div>
                     <!-- akhir filter -->
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+// use App\Models\Produk;
 
 class KategoriController extends Controller
 {
@@ -10,6 +11,7 @@ class KategoriController extends Controller
     // menampilkan seluruh data
     function index()
     {
+
         $data['list_kategori'] = kategori::all();
         return view('kategori.index', $data); //mengarahkan ke folder view yg mana si file nya
     }
@@ -35,6 +37,7 @@ class KategoriController extends Controller
     // menampilkan satu data/detail data
     function show(kategori $kategori)
     {
+        // show yg lama
         $data['kategori'] = $kategori;
         return view('kategori.show', $data);
     }

@@ -33,7 +33,7 @@ Route::get('template', [UserKategoriController::class, 'showBeranda']);
 Route::get('userpromo', [UserProdukController::class, 'promo']);
 // menampilkan produk
 Route::get('userproduk', [UserProdukController::class, 'index']);
-Route::post('userproduk/filter', [UserProdukController::class, 'filter']);
+// Route::post('userproduk/filter', [UserProdukController::class, 'filter']);
 Route::get('userproduk/{userproduk}', [UserProdukController::class, 'show']);
 // login
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');
@@ -42,7 +42,12 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::get('register', [AuthController::class, 'showRegister']);
 Route::post('register', [AuthController::class, 'storeRegister']);
 
-
+// filter
+Route::post('userproduk/filterNama', [UserProdukController::class, 'filterNama']);
+Route::post('userproduk/filterHarga', [UserProdukController::class, 'filterHarga']);
+Route::post('userproduk/filterSize', [UserProdukController::class, 'filterSize']);
+Route::post('userproduk/filterColor', [UserProdukController::class, 'filterColor']);
+// akhir filter
 
 
 // ////////////////  ADMIN dan pengguna  /////////////////////////////////

@@ -14,11 +14,11 @@
                     <form action="{{url('admin/produk')}}" method="post">
                         <!-- syntac keamanan dari laravel-->
                         @csrf
+
                         <div class="form-group">
                             <label for="" class="control-label">Nama</label>
                             <input type="text" name="nama" id="" class="form-control">
                         </div>
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

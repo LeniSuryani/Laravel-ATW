@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\kategori;
 
 class ProdukController extends Controller
 {
@@ -15,7 +16,7 @@ class ProdukController extends Controller
         // $data['list_produk'] = produk::where('id_user', $id_user)->get();
 
         // dengan relasi di model user
-        $userr = request()->user();
+        $userr = request()->user(); //mengambil data id user dari autentikasi
         $data['list_produk'] = $userr->produk; //->produk ini harus sama dengan function yg ada di dlm model user
         return view('produk.index', $data); //mengarahkan ke folder view yg mana si file nya
     }
@@ -38,8 +39,8 @@ class ProdukController extends Controller
         $produk->berat = request('berat');
         $produk->deskripsi = request('deskripsi');
         $produk->stok = request('stok');
-
         $produk->save();
+
         // ->with('success',) ini merupakan alert
         return redirect('admin/produk')->with('success', 'Data Berhasil Ditambahkan');
     }
@@ -59,7 +60,6 @@ class ProdukController extends Controller
     function update(produk $produk)
     {
         // // kiri= nama (database), kanan= nama(codingan view)
-        $produk->id_user =  request()->user()->id; //foreign key
         $produk->nama = request('nama');
         $produk->harga = request('harga');
         $produk->size = request('size');
