@@ -13,7 +13,7 @@
                     <h3>{{$produk->nama}}</h3>
                     <hr>
                     <p>
-                        Harga: Rp.{{number_format($produk->harga)}} <br>
+                        {{$produk->harga}} <br>
                         Stok: {{($produk->stok)}} <br>
                         Berat: {{($produk->berat)}} gr
                     </p>

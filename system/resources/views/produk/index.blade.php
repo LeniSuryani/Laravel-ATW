@@ -9,7 +9,6 @@
                 <div class="card-header">
                     Data Produk
                     <a href="{{url('admin/produk/create')}}" class="btn btn-dark btn-sm float-right"> <i class="fa fa-plus mr-2"></i> Tambah Data</a>
-
                 </div>
                 <div class="card-body">
                     <table class="table display" id="table_id">
@@ -21,6 +20,7 @@
                             <th>stok</th>
                         </thead>
                         <tbody>
+
                             @foreach($list_produk as $produk)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
@@ -34,6 +34,7 @@
                                 <td>{{$produk->stok}}</td>
                             </tr>
                             @endforeach
+
                         </tbody>
                     </table>
                 </div>

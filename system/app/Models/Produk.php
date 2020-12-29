@@ -12,4 +12,14 @@ class Produk extends Model
     {
         return $this->belongsTo(User::class, 'id_user'); //id_user adalah foreign key nya, 
     }
+
+    function getHargaAttribute()
+    {
+        return "Rp. " . number_format($this->attributes['harga']);
+    }
+    function getTanggalProduksiAttribute()
+    {
+        $tanggal = $this->created_at;
+        return strftime("%d %b %Y", strtotime($this->created_at));
+    }
 }

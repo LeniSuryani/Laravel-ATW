@@ -13,11 +13,12 @@
                     <h3>{{$produk->nama}}</h3>
                     <hr>
                     <p>
-                        Harga: Rp.{{number_format($produk->harga)}} <br>
-                        Warna: {{($produk->color)}} <br>
-                        Size: {{($produk->size)}} <br>
+                        {{$produk->harga}} |
+                        Warna: {{($produk->color)}} |
+                        Size: {{($produk->size)}}|
                         Stok: {{($produk->stok)}} <br>
                         Berat: {{($produk->berat)}} gr
+                        Tanggal Produksi : {{$produk->tanggal_produksi}}
 
                         <br><br>
                         <!-- $produk = merujuk pada model produk, ->seller = merujuk pada function yg ada pada mode produk -->
