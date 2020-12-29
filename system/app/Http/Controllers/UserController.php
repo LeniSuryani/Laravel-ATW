@@ -28,7 +28,7 @@ class UserController extends Controller
         // // kiri= nama (database), kanan= nama(codingan view)
         $user->nama = request('nama');
         $user->username = request('username');
-        $user->password = bcrypt(request('password'));
+        $user->password = request('password'); //tidak perlu pakai bcrypt karena sudah diwakilkan di model user
         $user->email = request('email');
         $user->save();
 
@@ -61,7 +61,7 @@ class UserController extends Controller
         $user->username = request('username');
         $user->email = request('email');
         // khusus untuk update password agak berbeda syntax nya, ini berguna apabila user tidak ingin mengupdate password nya maka jika tidak di isi tidak apa2
-        if (request('password')) $user->password = bcrypt(request('password'));
+        if (request('password')) $user->password = (request('password')); //tidak perlu pakai bcrypt karena sudah diwakilkan di model user
         $user->save();
 
         // relasi one to one

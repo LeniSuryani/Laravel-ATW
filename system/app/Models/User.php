@@ -25,4 +25,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Produk::class, 'id_user'); //id_user adalah foreign key nya
     }
+
+    function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    function setUsernameAttribute($value)
+    {
+        $this->attributes['username'] = strtolower($value);
+    }
 }
