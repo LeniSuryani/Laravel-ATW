@@ -5,6 +5,9 @@ namespace App\Models;
 class Produk extends Model
 {
     protected $table = 'produk';
+    protected $casts = [
+        'created_at' => 'datetime'
+    ];
 
 
     // untuk menampilkan data di show produk

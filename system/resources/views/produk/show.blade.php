@@ -18,7 +18,8 @@
                         Size: {{($produk->size)}}|
                         Stok: {{($produk->stok)}} <br>
                         Berat: {{($produk->berat)}} gr
-                        Tanggal Produksi : {{$produk->tanggal_produksi}}
+                        <!-- Tanggal Produksi : {{$produk->tanggal_produksi}} -->
+                        Tanggal Produksi : {{$produk->created_at->diffForHumans()}} <!-- hubungannya sama model produk yg bagian casts -->
 
                         <br><br>
                         <!-- $produk = merujuk pada model produk, ->seller = merujuk pada function yg ada pada mode produk -->
