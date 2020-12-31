@@ -27,6 +27,11 @@
                     </p>
                     <br>
                     <p>
+                        <!-- <img src="{{url('public')}}/$produk->foto" alt=""> -->
+                        <img src="{{url('public', $produk->foto )}}" alt="">
+                    </p>
+                    <br>
+                    <p>
                         {!! nl2br($produk->deskripsi) !!}
                     </p>
                 </div>

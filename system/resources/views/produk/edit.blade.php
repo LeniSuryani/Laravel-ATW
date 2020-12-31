@@ -21,18 +21,26 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="" class="control-label">Harga</label>
                                     <input type="text" name="harga" id="" class="form-control" value="{{$produk->harga}}">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="" class="control-label">Size</label>
                                     <input type="text" name="size" id="" class="form-control" value="{{$produk->size}}">
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="" class="control-label">Foto</label>
+                                    <input type="file" name="foto" id="" class="form-control" accept=".png" value="{{$produk->foto}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="" class="control-label">Color</label>

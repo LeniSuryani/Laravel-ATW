@@ -11,7 +11,9 @@
                 </div>
                 <div class="card-body">
                     <!-- mengarah ke routes/web -->
-                    <form action="{{url('admin/produk')}}" method="post">
+
+                    <!-- penggunaan enctype berfungsi untuk mengupload gambar dalam bentuk file bukan hanya nama gambar nya saja -->
+                    <form action="{{url('admin/produk')}}" method="post" enctype="multipart/form-data">
                         <!-- syntac keamanan dari laravel-->
                         @csrf
 
@@ -20,18 +22,26 @@
                             <input type="text" name="nama" id="" class="form-control">
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="" class="control-label">Harga</label>
                                     <input type="text" name="harga" id="" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="" class="control-label">Size</label>
                                     <input type="text" name="size" id="" class="form-control">
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="" class="control-label">Foto</label>
+                                    <input type="file" name="foto" id="" class="form-control" accept=".png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="" class="control-label">Color</label>

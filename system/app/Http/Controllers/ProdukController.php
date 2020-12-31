@@ -41,6 +41,8 @@ class ProdukController extends Controller
         $produk->stok = request('stok');
         $produk->save();
 
+        $produk->handleUploadFoto();
+
         // ->with('success',) ini merupakan alert
         return redirect('admin/produk')->with('success', 'Data Berhasil Ditambahkan');
     }
@@ -61,6 +63,7 @@ class ProdukController extends Controller
     {
         // // kiri= nama (database), kanan= nama(codingan view)
         $produk->nama = request('nama');
+        $produk->foto = request('foto');
         $produk->harga = request('harga');
         $produk->size = request('size');
         $produk->color = request('color');
