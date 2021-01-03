@@ -3,15 +3,22 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 mt-2">
+    <div class="row mt-2">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{url("public/$produk->foto")}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
                     Edit Data Produk
                 </div>
                 <div class="card-body">
                     <!-- mengarah ke routes/web -->
-                    <form action="{{url('admin/produk', $produk->id)}}" method="post">
+                    <form action="{{url('admin/produk', $produk->id)}}" method="post" enctype="multipart/form-data">
                         <!-- syntac keamanan dari laravel-->
                         @csrf
                         @method("PUT")

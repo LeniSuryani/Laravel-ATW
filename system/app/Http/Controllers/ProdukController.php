@@ -28,6 +28,7 @@ class ProdukController extends Controller
     // proses menyimpan data ke database
     function store()
     {
+        // dd(request()->all());
         // produk ini sama dengan model
         $produk = new produk;
         // // kiri= nama (database), kanan= nama(codingan view)
@@ -63,21 +64,22 @@ class ProdukController extends Controller
     {
         // // kiri= nama (database), kanan= nama(codingan view)
         $produk->nama = request('nama');
-        $produk->foto = request('foto');
         $produk->harga = request('harga');
         $produk->size = request('size');
         $produk->color = request('color');
         $produk->berat = request('berat');
         $produk->stok = request('stok');
         $produk->deskripsi = request('deskripsi');
-
         $produk->save();
+
+        $produk->handleUploadFoto();
 
         return redirect('admin/produk')->with('warning', 'Data Berhasil Diubah');
     }
     // proses menghapus
     function destroy(produk $produk)
     {
+        $produk->handleDelete();
         $produk->delete();
         return redirect('admin/produk')->with('danger', 'Data Berhasil Dihapus');
     }

@@ -27,8 +27,9 @@
                     </p>
                     <br>
                     <p>
-                        <!-- <img src="{{url('public')}}/$produk->foto" alt=""> -->
-                        <img src="{{url('public', $produk->foto )}}" alt="">
+                        Foto :
+
+                        <img src="{{url("public/$produk->foto")}}" alt="">
                     </p>
                     <br>
                     <p>
