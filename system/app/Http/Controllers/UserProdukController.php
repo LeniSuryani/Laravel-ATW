@@ -12,7 +12,7 @@ class UserProdukController extends Controller
     function index()
     {
         $data['list_kategori'] = kategori::all();
-        $dataa['list_produk'] = produk::all();
+        $dataa['list_produk'] = produk::paginate(4);
         return view('UserProduk.index', $data, $dataa); //mengarahkan ke folder view yg mana si file nya
     }
 

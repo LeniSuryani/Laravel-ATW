@@ -71,6 +71,11 @@
 
                         </div>
                         @endforeach
+
+                        <br><br>
+                        <div class="ml-auto">
+                            {!! $list_produk->links() !!}
+                        </div>
                     </div>
                     <!-- akhir produk-->
                     <!-- filter -->
