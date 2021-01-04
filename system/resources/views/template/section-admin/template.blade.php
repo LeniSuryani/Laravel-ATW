@@ -30,6 +30,9 @@
     </section>
     <!-- foot -->
     @include('template.section-admin.foot')
+
+
+    @stack('script')
 </body>
 
 </html>

@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 ////////      ADMIN
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('produk', ProdukController::class);
@@ -57,7 +58,7 @@ Route::get('/template.admin', function () { ////sebagai halaman utama
     return view('template.admin.beranda');
 });
 
-
+Route::get('test-ajax', [HomeController::class, 'testAjax']);
 
 
 
