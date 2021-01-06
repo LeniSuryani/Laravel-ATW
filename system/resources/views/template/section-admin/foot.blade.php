@@ -166,3 +166,4 @@
     window.dt = require('./node_modules/datatables.net')();
     window.$('#table_id').DataTable();
 </script>
+@stack('script')

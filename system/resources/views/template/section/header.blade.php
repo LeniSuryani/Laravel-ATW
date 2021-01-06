@@ -98,9 +98,9 @@ if(Route::current()->uri == $route) return 'active';
                                 PRODUK
                             </a>
                         </li>
-                        <li class="nav-item {{checkRouteActive('userpromo')}}">
-                            <a class="nav-link" href="{{ url('/userpromo') }}">
-                                DISKON
+                        <li class="nav-item {{checkRouteActive('keranjang')}}">
+                            <a class="nav-link" href="{{ url('/keranjang') }}">
+                                <i class="fas fa-bucket"></i> KERANJANG
                             </a>
                         </li>
                     </ul>

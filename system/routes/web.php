@@ -36,6 +36,9 @@ Route::get('userpromo', [UserProdukController::class, 'promo']);
 Route::get('userproduk', [UserProdukController::class, 'index']);
 // Route::post('userproduk/filter', [UserProdukController::class, 'filter']);
 Route::get('userproduk/{userproduk}', [UserProdukController::class, 'show']);
+Route::get('keranjang', [UserProdukController::class, 'keranjang']);
+
+
 // login
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'loginProcess']);

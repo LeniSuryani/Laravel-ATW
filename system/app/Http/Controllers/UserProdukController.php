@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\produk;
 use App\Models\kategori;
+use App\Models\Provinsi;
 
 class UserProdukController extends Controller
 {
 
+    function keranjang()
+    {
+        $data['list_provinsi'] = Provinsi::all();
+        $data['list_kategori'] = kategori::all();
+        return view('keranjang', $data);
+    }
     // menampilkan seluruh data
     function index()
     {
