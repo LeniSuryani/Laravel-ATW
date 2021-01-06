@@ -16,17 +16,33 @@ class AuthController extends Controller
 
     function loginProcess()
     {
-        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
-            return redirect('template.admin')->with('success', 'Login Berhasil');
+        // if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+        //     return redirect('template.admin')->with('success', 'Login Berhasil');
+        // } else {
+        //     // return redirect('template.admin')->with('success', 'Login Berhasil');
+        //     return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
+        // }
+
+        if (request('login_as') == 1) {
+            if (Auth::guard('pembeli')->attempt(['email' => request('email'), 'password' => request('password')])) {
+                return redirect('beranda/pembeli')->with('success', 'login berhasil');
+            } else {
+                return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
+            }
         } else {
-            // return redirect('template.admin')->with('success', 'Login Berhasil');
-            return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
+            if (Auth::guard('penjual')->attempt(['email' => request('email'), 'password' => request('password')])) {
+                return redirect('beranda/penjual')->with('success', 'login berhasil');
+            } else {
+                return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
+            }
         }
     }
 
     function logout()
     {
         Auth::logout();
+        Auth::guard('pembeli')->logout();
+        Auth::guard('penjual')->logout();
         return redirect('template');
     }
 

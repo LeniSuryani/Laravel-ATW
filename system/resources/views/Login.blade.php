@@ -46,6 +46,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label class="control-label" for="password">Password</label>
                         <input class="ggg" type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label class="control-label mb-3" for="password">Sebagai</label>
+                        <select name="login_as" id="" class="ggg from-control " style="padding: 15px; width:100%; background: none; border-color :white; color: white;">
+                            <option class="ggg text-dark" value="1">Pembeli</option>
+                            <option class="ggg text-dark" value="2">Penjual</option>
+                        </select>
+                    </div>
 
 
                     <input style="border-radius: 20px;" type="submit" value="submit" name="login">

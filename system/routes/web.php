@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('beranda/{status}', [AdminController::class, 'showAdminBeranda']);
+
 
 ////////      ADMIN
 Route::prefix('admin')->middleware('auth')->group(function () {

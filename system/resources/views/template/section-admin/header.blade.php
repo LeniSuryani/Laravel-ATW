@@ -16,6 +16,10 @@
                 SELAMAT DATANG
                 @if(Auth::check())
                 {{request()->user()->nama}}
+                @elseif(Auth::guard('pembeli')->check())
+                {{Auth::guard('pembeli')->user()->nama}}
+                @elseif(Auth::guard('penjual')->check())
+                {{Auth::guard('penjual')->user()->nama}}
                 @else
                 silahkan login
                 @endif
@@ -37,6 +41,10 @@
 
                         @if(Auth::check())
                         {{request()->user()->nama}}
+                        @elseif(Auth::guard('pembeli')->check())
+                        {{Auth::guard('pembeli')->user()->nama}}
+                        @elseif(Auth::guard('penjual')->check())
+                        {{Auth::guard('penjual')->user()->nama}}
                         @else
                         silahkan login
                         @endif
