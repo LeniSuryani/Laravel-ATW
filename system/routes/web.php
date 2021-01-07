@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
@@ -17,7 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('beranda/{status}', [AdminController::class, 'showAdminBeranda']);
+Route::get('setting', [SettingController::class, 'index']);
+Route::post('setting', [SettingController::class, 'store']);
 
 
 ////////      ADMIN

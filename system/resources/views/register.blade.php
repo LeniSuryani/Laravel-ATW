@@ -50,14 +50,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label for="" class="control-label">Nama</label>
                         <input type="text" name="nama" id="" class="form-control ggg">
                     </div>
-
-                    <div class="form-group">
-                        <label for="" class="control-label">Username</label>
-                        <input type="text" name="username" id="" class="form-control ggg">
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="control-label">No-Handphone</label>
-                        <input type="text" name="no_hp" id="" class="form-control ggg">
+                    <!-- <div class="form-group ">
+                        <label for="" class="control-label">Sebagai</label>
+                        <select name="sebagai" class="form-control mt-3" style="padding: 15px; width:100%; background: none; border-color :white; color: white;">
+                            <option value="1">PENJUAL</option>
+                            <option value="2">PEMBELI</option>
+                        </select>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Username</label>
+                                <input type="text" name="username" id="" class="form-control ggg">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">No-Handphone</label>
+                                <input type="text" name="no_hp" id="" class="form-control ggg">
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">

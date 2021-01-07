@@ -9,6 +9,10 @@ class AdminController extends Controller
     {
         return view('template.admin.beranda');
     }
+
+
+
+    
     function showAdminKategori()
     {
         return view('template.admin.kategori');
