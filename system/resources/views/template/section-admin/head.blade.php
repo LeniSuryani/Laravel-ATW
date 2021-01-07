@@ -66,4 +66,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!-- sisanya ada di footer -->
+
+    <style>
+        .active {
+            background: yellowgreen;
+        }
+    </style>
 </head>

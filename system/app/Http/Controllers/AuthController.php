@@ -19,35 +19,38 @@ class AuthController extends Controller
 
     function loginProcess()
     {
-        //digunakan untuk login biasa tanpa multi user
-        // if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
-        //     return redirect('template.admin')->with('success', 'Login Berhasil');
-        // } else {
-        //     // return redirect('template.admin')->with('success', 'Login Berhasil');
-        //     return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
-        // }
+        // digunakan untuk login biasa tanpa multi user
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+            return redirect('template.admin')->with('success', 'Login Berhasil');
+        } else {
+            // return redirect('template.admin')->with('success', 'Login Berhasil');
+            return back()->with('danger', 'Login gagal. Silahkan cek email dan password anda!');
+        }
 
-        $email = request('email');
-        $user = Pembeli::where('email', $email)->first();
-        if ($user) {
-            $guard = 'pembeli';
-        } else {
-            $user = Penjual::where('email', $email)->first();
-            if ($user) {
-                $guard = 'penjual';
-            } else {
-                $guard = false;
-            }
-        }
-        if (!$guard) {
-            return back()->with('danger', 'login gagal, email tidak dapat ditemukan');
-        } else {
-            if (Auth::guard($guard)->attempt(['email' => request('email'), 'password' => request('password')])) {
-                return redirect('beranda/$guard')->with('success', 'Anda berhasil login');
-            } else {
-                return back()->with('danger', 'login gagal silahkan cek email dan password');
-            }
-        }
+
+
+
+        // $email = request('email');
+        // $user = Pembeli::where('email', $email)->first();
+        // if ($user) {
+        //     $guard = 'pembeli';
+        // } else {
+        //     $user = Penjual::where('email', $email)->first();
+        //     if ($user) {
+        //         $guard = 'penjual';
+        //     } else {
+        //         $guard = false;
+        //     }
+        // }
+        // if (!$guard) {
+        //     return back()->with('danger', 'login gagal, email tidak dapat ditemukan');
+        // } else {
+        //     if (Auth::guard($guard)->attempt(['email' => request('email'), 'password' => request('password')])) {
+        //         return redirect('beranda/$guard')->with('success', 'Anda berhasil login');
+        //     } else {
+        //         return back()->with('danger', 'login gagal silahkan cek email dan password');
+        //     }
+        // }
 
 
 

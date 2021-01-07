@@ -44,6 +44,9 @@ class UserController extends Controller
     // menampilkan satu data/detail data
     function show(user $user)
     {
+        $loggedUser = request()->user();
+        if ($loggedUser->id != $user->id) return abort(403);
+
         $data['user'] = $user;
         return view('user.show', $data);
     }
