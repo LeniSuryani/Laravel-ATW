@@ -42,8 +42,9 @@ class UserController extends Controller
         return redirect('admin/user')->with('success', 'Data Berhasil Ditambahkan');
     }
     // menampilkan satu data/detail data
-    function show(user $user)
+    function show($user)
     {
+        $user = user::findOrFail($user);
         $loggedUser = request()->user();
         if ($loggedUser->id != $user->id) return abort(403);
 
