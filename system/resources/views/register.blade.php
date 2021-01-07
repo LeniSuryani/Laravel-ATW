@@ -59,19 +59,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @csrf
                     <div class="form-group">
                         <label for="" class="control-label">Nama</label>
-                        @if($errors->has('nama'))
-                        <label for="" class="label text-danger" style="background: white;"> {{$errors->get('nama')[0]}}</label>
-                        @endif
+                        @include('template.utils.errors', ['item' => 'nama'])
                         <input type="text" name="nama" id="" class="form-control ggg">
                     </div>
-                    <!-- <div class="form-group ">
-                        <label for="" class="control-label">Sebagai</label>
-                        <select name="sebagai" class="form-control mt-3" style="padding: 15px; width:100%; background: none; border-color :white; color: white;">
-                            <option value="1">PENJUAL</option>
-                            <option value="2">PEMBELI</option>
-                        </select>
-                    </div> -->
-
                     <div class="form-group">
                         <label for="" class="control-label">Username</label>
                         @if($errors->has('username'))
