@@ -43,6 +43,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             @include('template.utils.notif')
             <div class="card-body">
                 <!-- mengarah ke routes/web -->
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="ml-4">
+                        @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <br>
                 <form action="{{url('register')}}" method="post">
                     <!-- syntac keamanan dari laravel-->
                     @csrf

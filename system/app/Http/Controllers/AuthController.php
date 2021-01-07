@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\UserDetail;
 use App\Models\Pembeli;
 use App\Models\Penjual;
+use App\Http\Requests\UserStoreRequest;
 
 class AuthController extends Controller
 {
@@ -79,7 +80,7 @@ class AuthController extends Controller
     {
         return view('register');
     }
-    function storeRegister()
+    function storeRegister(UserStoreRequest $request)
     {
         // produk ini sama dengan model
         $penjual = new penjual;
