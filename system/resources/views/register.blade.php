@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="card-body">
                 <!-- mengarah ke routes/web -->
 
-                @if ($errors->any())
+                <!-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="ml-4">
                         @foreach ($errors->all() as $error)
@@ -52,13 +52,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         @endforeach
                     </ul>
                 </div>
-                @endif
+                @endif -->
                 <br>
                 <form action="{{url('register')}}" method="post">
                     <!-- syntac keamanan dari laravel-->
                     @csrf
                     <div class="form-group">
                         <label for="" class="control-label">Nama</label>
+                        @if($errors->has('nama'))
+                        <label for="" class="label text-danger" style="background: white;"> {{$errors->get('nama')[0]}}</label>
+                        @endif
                         <input type="text" name="nama" id="" class="form-control ggg">
                     </div>
                     <!-- <div class="form-group ">
@@ -68,25 +71,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <option value="2">PEMBELI</option>
                         </select>
                     </div> -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="" class="control-label">Username</label>
-                                <input type="text" name="username" id="" class="form-control ggg">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="" class="control-label">No-Handphone</label>
-                                <input type="text" name="no_hp" id="" class="form-control ggg">
-                            </div>
-                        </div>
+
+                    <div class="form-group">
+                        <label for="" class="control-label">Username</label>
+                        @if($errors->has('username'))
+                        <label for="" class="label text-danger" style="background: white;"> {{$errors->get('username')[0]}}</label>
+                        @endif
+                        <input type="text" name="username" id="" class="form-control ggg">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Email</label>
+                        @if($errors->has('email'))
+                        <label for="" class="label text-danger" style="background: white;"> {{$errors->get('email')[0]}}</label>
+                        @endif
+                        <input type="" name="email" id="" class="form-control ggg">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="" class="control-label">Email</label>
-                                <input type="" name="email" id="" class="form-control ggg">
+                                <label for="" class="control-label">No-Handphone</label>
+                                <input type="text" name="no_hp" id="" class="form-control ggg">
                             </div>
                         </div>
                         <div class="col-md-6">

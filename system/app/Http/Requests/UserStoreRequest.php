@@ -29,4 +29,14 @@ class UserStoreRequest extends FormRequest
             'email' => 'required|email'
         ];
     }
+
+    function messages()
+    {
+        return [
+            'nama.required' => ' Field Nama wajib di isi',
+            'username.required' => 'Silahkan isi nama Anda',
+            'email.required' => 'email anda tidak falid, silahkan isi dengan benar',
+            'username.unique' => 'Username tersebut sudah terdaftar'
+        ];
+    }
 }
